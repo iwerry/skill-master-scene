@@ -5,6 +5,9 @@
  Everyone is permitted to copy and distribute verbatim copies
  of this license document, but changing it is not allowed.
 
+ skill-master-scene — a Master Scene screenplay format knowledge engine
+    Copyright (C) 2026  Daniel Rodrigues
+
                             Preamble
 
   The GNU General Public License is a free, copyleft license for
@@ -18,9 +21,6 @@ software for all its users.  We, the Free Software Foundation, use the
 GNU General Public License for most of our software; it applies also to
 any other work released this way by its authors.  You can apply it to
 your programs, too.
-
- skill-master-scene — a Master Scene screenplay format knowledge engine
-    Copyright (C) 2025  Daniel Rodrigues
 
   When we speak of free software, we are referring to freedom, not
 price.  Our General Public Licenses are designed to make sure that you
