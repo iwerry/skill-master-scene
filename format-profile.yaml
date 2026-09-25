@@ -15,7 +15,7 @@ font:
     default: "Courier Prime"
     min: null
     max: null
-    allowed_values: ["Courier", "Courier Prime""]
+    allowed_values: ["Courier", "Courier Prime"]
     severity_if_outside: error
     note: "Courier New is NOT equivalent to Courier — it renders ~10% longer per line and breaks the 1-page-per-minute assumption."
   size_pt:
