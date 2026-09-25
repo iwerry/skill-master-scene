@@ -1,0 +1,34 @@
+# Master Scenes Skill by Daniel Rodrigues
+#
+# profiles/jp-anime.yaml
+# Japanese anime, cut-numbered storyboard-adjacent scripting. Scaffold.
+
+schema_version: "1.0.0"
+profile_id: jp-anime
+market: "Japan"
+medium: "Anime (TV/OVA/film)"
+verified: false
+inherits_from: format-profile.yaml
+
+overrides:
+  structure:
+    cut_numbering:
+      enabled: true
+      label: "CUT [N]"
+      verified: false
+      note: "TODO-VERIFY: anime production scripts are widely known to be numbered by 'cut' rather than by scene in the Western sense, aligning closely with the storyboard (e-conte), but the exact notation convention (numbering scheme, whether 'CUT IN'/'CUT OUT' markers are standard) is unverified against a primary source here."
+    storyboard_adjacency:
+      note: "The screenplay text and the storyboard are typically developed in close coordination, sometimes with the script itself annotated with camera/shot notes inline."
+      verified: false
+  page:
+    verified: false
+    note: "TODO-VERIFY: Japanese-language scripts are not written in monospaced Courier in the Latin-alphabet sense; the page-geometry model in format-profile.yaml is a Latin-script convention and does not directly transfer. This profile does not assert equivalent numeric values for Japanese-script formatting."
+
+notes: >
+  This is the most heavily caveated profile in the package: the base
+  format-profile.yaml geometry model assumes a Latin-alphabet, monospaced
+  layout, which does not map cleanly onto Japanese-language scripting
+  conventions. Treat this profile as a structural/vocabulary scaffold
+  only, not a page-geometry authority.
+
+# Master Scenes Skill by Daniel Rodrigues

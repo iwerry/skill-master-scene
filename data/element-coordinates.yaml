@@ -1,0 +1,50 @@
+# Master Scenes Skill by Daniel Rodrigues
+#
+# data/element-coordinates.yaml
+# Pure data: the column-position table for the us-studio-feature profile.
+# Other profiles override only the deltas from this table.
+
+schema_version: "1.0.0"
+
+elements:
+  - id: scene_heading
+    left_in: 1.5
+    right_in: null
+    alignment: left
+  - id: action
+    left_in: 1.5
+    right_in: 7.5
+    alignment: left
+  - id: parenthetical
+    left_in: 3.1
+    right_in: null
+    alignment: left
+  - id: character
+    left_in: 3.7
+    right_in: null
+    alignment: left
+    tolerance_in: [3.7, 4.2]
+  - id: dialogue
+    left_in: 2.5
+    right_in: 6.0
+    alignment: left
+    usable_width_in: 3.5
+  - id: transition
+    left_in: null
+    right_in: 6.0
+    alignment: right
+  - id: page_number
+    left_in: null
+    right_in: null
+    position: "top right, 0.5 in from top"
+  - id: scene_number_left
+    left_in: 0.75
+    right_in: null
+    applies_to_modes: [shooting, production]
+  - id: scene_number_right
+    left_in: null
+    right_in: 1.0
+    right_from: page_edge
+    applies_to_modes: [shooting, production]
+
+# Master Scenes Skill by Daniel Rodrigues

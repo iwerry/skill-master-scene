@@ -1,0 +1,43 @@
+# Master Scenes Skill by Daniel Rodrigues
+#
+# profiles/audio-drama.yaml
+# No camera; sound-first grammar. Partially verified — the structural
+# facts (no visual sluglines, SFX as first-class) are well established;
+# exact page-geometry numbers are not.
+
+schema_version: "1.0.0"
+profile_id: audio-drama
+market: "Medium-agnostic (radio/podcast drama)"
+medium: "Audio drama"
+verified: false
+inherits_from: format-profile.yaml
+
+overrides:
+  elements:
+    scene_heading:
+      applies: false
+      replacement: "Location/ambience cue"
+      note: "No camera, so INT./EXT. framing does not apply as written; replaced by an ambience or location cue."
+    sfx:
+      first_class_element: true
+      left_position_in: { verified: false, note: "TODO-VERIFY: exact column convention for SFX cues varies by production house." }
+    vo:
+      first_class_element: true
+      note: "V.O. is not an extension here — it is often the primary narrative mode, not an exception to a visual default."
+  content_rules:
+    camera_language_forbidden:
+      enabled: true
+      examples: ["CUT TO:", "WE SEE", "PAN TO"]
+      severity: warning
+      note: "Camera language leaking into an audio drama script is flagged as a mismatched-medium style note, not a hard error."
+  page:
+    verified: false
+    note: "TODO-VERIFY: no single dominant page-geometry standard confirmed across audio drama producers; conventions vary widely by production company and are often company-internal style guides rather than an industry-wide standard."
+
+notes: >
+  The structural claim (sound-first, no camera framing, SFX/VO as
+  first-class elements rather than extensions) is well-established; the
+  page-geometry numbers are not, because unlike film there is no single
+  dominant published industry-wide page standard for audio drama.
+
+# Master Scenes Skill by Daniel Rodrigues

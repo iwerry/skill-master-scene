@@ -1,0 +1,36 @@
+# Master Scenes Skill by Daniel Rodrigues
+#
+# profiles/br-telenovela.yaml
+# Brazilian chapter-based telenovela structure. Scaffold — TODO-VERIFY.
+
+schema_version: "1.0.0"
+profile_id: br-telenovela
+market: "Brazil"
+medium: "Telenovela (daily serialized chapter drama)"
+verified: false
+inherits_from: format-profile.yaml
+
+overrides:
+  structure:
+    chapter_based:
+      enabled: true
+      unit_name: "capítulo"
+      verified: false
+      note: "TODO-VERIFY: telenovelas are widely known to be structured in daily 'capítulos' (chapters) rather than film-style acts, and scenes are short with frequent act-break-equivalents per chapter to accommodate commercial breaks — this structural fact is well established, but exact page-count-per-chapter and exact break-count-per-chapter targets are network/production-house-specific and unverified here."
+    scene_length:
+      tendency: "shorter than feature-film scenes"
+      verified: false
+    breaks_per_chapter:
+      verified: false
+      note: "TODO-VERIFY: number of commercial-break-equivalent act divisions per chapter varies by network and time slot."
+  page:
+    verified: false
+    note: "TODO-VERIFY: page geometry inherited from format-profile.yaml unmodified pending confirmation of any Brazilian-market-specific house style."
+
+notes: >
+  The chapter/short-scene structural pattern is a well-known real-world
+  fact about telenovela writing; the specific numeric parameters in this
+  file are not yet independently confirmed and must not be presented as
+  canonical.
+
+# Master Scenes Skill by Daniel Rodrigues

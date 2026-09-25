@@ -1,0 +1,43 @@
+# Master Scenes Skill by Daniel Rodrigues
+#
+# profiles/us-tv-multicam.yaml
+# US half-hour multi-camera sitcom.
+
+schema_version: "1.0.0"
+profile_id: us-tv-multicam
+market: "United States"
+medium: "Half-hour multi-camera sitcom"
+verified: false
+inherits_from: format-profile.yaml
+
+overrides:
+  font:
+    size_pt: { default: 12, verified: false, note: "TODO-VERIFY: some multicam houses use double-spaced dialogue; this changes effective lines-per-page even at 12pt Courier." }
+  page:
+    lines_per_page:
+      default: 55
+      verified: false
+      note: "TODO-VERIFY: multicam scripts are frequently double-spaced for on-set legibility and actor notation, which can roughly halve effective lines-per-page — needs a primary-source confirmation before treating as canonical."
+  runtime:
+    script_types:
+      episode:
+        min_pages: 35
+        max_pages: 48
+        verified: false
+        note: "TODO-VERIFY: double-spacing means multicam page counts are not directly comparable to single-cam/feature page counts under the 1-page≈1-minute rule."
+  structure:
+    act_breaks:
+      enabled: true
+      typical_count: { default: 2, verified: false }
+    live_audience_notation:
+      enabled: true
+      verified: false
+      note: "TODO-VERIFY: conventions for marking (LAUGH), (BEAT), or camera blocking numbers vary by show and studio."
+
+notes: >
+  Multicam sitcom format has real, well-known structural differences from
+  single-cam (double-spacing, camera blocking numbers, act structure) but
+  the exact numeric specifics are house-style-dependent and marked
+  unverified pending a primary source.
+
+# Master Scenes Skill by Daniel Rodrigues

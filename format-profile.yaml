@@ -1,0 +1,196 @@
+# Master Scenes Skill by Daniel Rodrigues
+#
+# format-profile.yaml
+# The canonical, fully-populated Master Scene format schema.
+# This is the "us-studio-feature" ground truth. Cultural/industry profiles
+# in profiles/*.yaml inherit from this file and override only the deltas.
+
+schema_version: "1.0.0"
+profile_id: us-studio-feature
+verified: true
+inherits_from: null
+
+font:
+  family:
+    default: "Courier Prime"
+    min: null
+    max: null
+    allowed_values: ["Courier", "Courier Prime""]
+    severity_if_outside: error
+    note: "Courier New is NOT equivalent to Courier — it renders ~10% longer per line and breaks the 1-page-per-minute assumption."
+  size_pt:
+    default: 12
+    min: 12
+    max: 12
+    severity_if_outside: error
+  pitch_cpi:
+    default: 10
+    min: 10
+    max: 10
+    severity_if_outside: error
+
+page:
+  paper_size:
+    default: "US Letter"
+    allowed_values: ["US Letter", "A4"]
+    severity_if_outside: style
+    note: "A4 is a documented variant; see profiles for A4 margin adjustment."
+  dimensions_in:
+    width: 8.5
+    height: 11.0
+  lines_per_page:
+    default: 55
+    min: 45
+    max: 65
+    severity_if_outside: error
+    note: "This is the true invariant. All margin values below exist to preserve this count; adjust margins, not this number, when paper size changes."
+
+margins_in:
+  left:
+    default: 1.5
+    min: 1.5
+    max: 1.5
+    severity_if_outside: error
+    note: "Room for 3-hole punch + brads. This is the anchor for every left-column position below."
+  right:
+    default: 1.0
+    min: 0.5
+    max: 1.25
+    severity_if_outside: warning
+  top_to_body:
+    default: 1.0
+    min: 0.75
+    max: 1.25
+    severity_if_outside: warning
+  page_number_from_top:
+    default: 0.5
+    min: 0.5
+    max: 0.5
+    severity_if_outside: style
+  bottom:
+    default: 1.0
+    min: 0.5
+    max: 1.5
+    severity_if_outside: style
+
+elements:
+  scene_heading:
+    left_position_in: { default: 1.5, min: 1.5, max: 1.5, severity_if_outside: error }
+    case: ALL_CAPS
+    case_severity_if_outside: error
+  action:
+    left_position_in: { default: 1.5, min: 1.5, max: 1.5, severity_if_outside: error }
+    person: third
+    tense: present
+    max_paragraph_lines: { default: 4, min: 1, max: 4, severity_if_outside: style }
+  parenthetical:
+    left_position_in: { default: 3.1, min: 3.0, max: 3.2, severity_if_outside: warning }
+    max_lines: { default: 1, min: 1, max: 1, severity_if_outside: warning }
+    content_rule: "Brief physical action attached to speech only — not emotion/acting direction (a 'wryly')."
+  character:
+    left_position_in: { default: 3.7, min: 3.7, max: 4.2, severity_if_outside: warning }
+    case: ALL_CAPS
+    case_severity_if_outside: error
+  dialogue:
+    left_position_in: { default: 2.5, min: 2.5, max: 2.5, severity_if_outside: error }
+    right_edge_in: { default: 6.0, min: 5.5, max: 6.0, severity_if_outside: warning }
+    usable_width_in: { default: 3.5, min: 3.0, max: 3.5, severity_if_outside: style }
+    quotation_marks: forbidden
+  transition:
+    left_position_in: { default: 6.0, min: 5.8, max: 6.2, severity_if_outside: warning }
+    alignment: right
+    suffix_convention: "TO:"
+    suffix_required: false
+  page_number:
+    position: "top right"
+    from_top_in: { default: 0.5, min: 0.5, max: 0.5, severity_if_outside: style }
+    format: "N."
+    first_page_numbered: false
+  scene_number_left:
+    position_in: { default: 0.75, min: 0.75, max: 0.75, severity_if_outside: style }
+    applies_to_modes: ["shooting", "production"]
+  scene_number_right:
+    from_right_edge_in: { default: 1.0, min: 1.0, max: 1.0, severity_if_outside: style }
+    applies_to_modes: ["shooting", "production"]
+
+scene_heading_grammar:
+  prefixes: ["INT.", "EXT.", "EST.", "I/E.", "INT/EXT."]
+  pattern: "{PREFIX} {LOCATION} - {TIME_OF_DAY}"
+  time_of_day_examples: ["DAY", "NIGHT", "AFTERNOON", "LATER", "SAME", "MOMENTS LATER", "FLASHBACK (YEAR)"]
+  same_time_meaning: "Action happening simultaneously with the previous scene; may be written as a continuous scene without cutting."
+  case: ALL_CAPS
+
+content_rules:
+  action_person: third
+  action_tense: present
+  action_scope: "Only what the camera sees/hears."
+  character_name_case: ALL_CAPS
+  dialogue_quotation_marks: forbidden
+  parenthetical_scope: "Brief action attached to speech, not emotion/acting direction."
+  extensions:
+    - { code: "(V.O.)", meaning: "Voice Over", attaches_to: character_name }
+    - { code: "(O.S.)", meaning: "Off Screen / Off Camera", attaches_to: character_name }
+    - { code: "(CONT'D)", meaning: "Continued", attaches_to: character_name }
+  transitions:
+    - "FADE IN:"
+    - "FADE OUT."
+    - "CUT TO:"
+    - "SMASH CUT TO:"
+    - "CUT TO BLACK."
+  freeze_frame:
+    colon_required: false
+    action_after_allowed: false
+  emphasis:
+    bold_italics_in_spec: discouraged
+    bold_italics_in_production: allowed
+
+page_breaks:
+  scene_heading_orphan:
+    allowed: false
+    severity_if_violated: error
+    note: "A scene heading must stay bound to the action that follows it."
+  single_line_dialogue_split:
+    allowed: false
+    behavior: "Push the whole block to the next page."
+    severity_if_violated: warning
+  long_dialogue_split:
+    allowed: true
+    marker_bottom: "(MORE)"
+    marker_next_page: "(CONT'D)"
+    configurable: true
+    default_enabled: true
+
+runtime:
+  ratio: "1 page ≈ 1 minute"
+  script_types:
+    feature_spec: { min_pages: 90, max_pages: 120, target_min: 100, target_max: 110 }
+    comedy: { target_pages: 100 }
+    drama_action: { min_pages: 105, max_pages: 110 }
+  hard_minimum_pages: 90
+  hard_maximum_pages: 120
+  beyond_max_note: "Beyond 120 pages is treated as shooting-script territory, not spec."
+
+modes:
+  spec:
+    purpose: "Selling / reading draft"
+    scene_numbers: false
+    strictness: "warn on style issues"
+  shooting:
+    purpose: "Production draft"
+    scene_numbers: true
+    strictness: "tolerant; MORE/CONT'D enabled"
+  production:
+    purpose: "Call sheets, strips, reports"
+    scene_numbers: true
+    strictness: "bold/italics allowed"
+  table-read:
+    purpose: "Rehearsal (hide one character's lines)"
+    scene_numbers: optional
+    strictness: "filter mode"
+
+severity_levels:
+  order: [info, style, warning, error]
+  error_definition: "Reserved for things that break rendering or interop (e.g. non-monospaced font, lines_per_page outside 45-65)."
+  default_definition: "Everything else is warning or style. Never block a writer for a creative choice."
+
+# Master Scenes Skill by Daniel Rodrigues

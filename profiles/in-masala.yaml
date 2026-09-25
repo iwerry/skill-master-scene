@@ -1,0 +1,33 @@
+# Master Scenes Skill by Daniel Rodrigues
+#
+# profiles/in-masala.yaml
+# Indian multi-act, song-break structure. Scaffold — TODO-VERIFY.
+
+schema_version: "1.0.0"
+profile_id: in-masala
+market: "India"
+medium: "Masala / commercial Hindi cinema and related regional industries"
+verified: false
+inherits_from: format-profile.yaml
+
+overrides:
+  structure:
+    song_breaks:
+      enabled: true
+      verified: false
+      note: "TODO-VERIFY: musical/song sequences interleaved with the dramatic plot are a well-known structural convention in this tradition, but exact scripting notation for a song break (lyrics inline vs. referenced separately, act placement) varies by production and is unverified here."
+    interval_break:
+      enabled: true
+      verified: false
+      note: "TODO-VERIFY: many theatrical releases in this tradition include a formal intermission ('interval'), which functions as a structural act break, but exact page-position targets are unverified."
+  runtime:
+    typical_total_length:
+      verified: false
+      note: "TODO-VERIFY: runtimes for this tradition are often longer than the 90-120 page US feature norm; exact target page counts not yet confirmed against a primary source."
+
+notes: >
+  This profile is a scaffold covering only broad, well-known structural
+  facts (song breaks, interval). No specific numeric page-geometry value
+  is asserted as canonical for this market.
+
+# Master Scenes Skill by Daniel Rodrigues

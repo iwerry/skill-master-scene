@@ -1,0 +1,34 @@
+# Master Scenes Skill by Daniel Rodrigues
+#
+# profiles/uk-bbc.yaml
+# British television conventions. Scaffold only — TODO-VERIFY throughout.
+
+schema_version: "1.0.0"
+profile_id: uk-bbc
+market: "United Kingdom"
+medium: "British television drama"
+verified: false
+inherits_from: format-profile.yaml
+
+overrides:
+  page:
+    paper_size:
+      default: "A4"
+      verified: false
+      note: "TODO-VERIFY: UK scripts commonly use A4 rather than US Letter, which requires re-deriving margins to preserve lines-per-page — exact BBC-house margin values not yet confirmed against a primary source."
+  runtime:
+    script_types:
+      episode:
+        verified: false
+        note: "TODO-VERIFY: exact per-minute page targets for BBC drama slots not yet confirmed."
+  structure:
+    scene_numbering_convention:
+      verified: false
+      note: "TODO-VERIFY: UK shooting scripts may use different scene-numbering conventions than US shooting scripts (e.g. numbering by story day vs. sequential)."
+
+notes: >
+  This profile is a scaffold. No numeric BBC-specific value should be
+  treated as canonical until confirmed against a primary BBC or UK
+  broadcaster style guide.
+
+# Master Scenes Skill by Daniel Rodrigues

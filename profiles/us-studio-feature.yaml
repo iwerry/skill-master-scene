@@ -1,0 +1,19 @@
+# Master Scenes Skill by Daniel Rodrigues
+#
+# profiles/us-studio-feature.yaml
+# The reference standard. This IS format-profile.yaml — no deltas.
+# Kept as its own file so all profiles can be listed/loaded uniformly.
+
+schema_version: "1.0.0"
+profile_id: us-studio-feature
+market: "United States"
+medium: "Feature film, spec / studio standard"
+verified: true
+inherits_from: format-profile.yaml
+overrides: {}
+notes: >
+  This profile is the fully-populated ground truth described in Part A.
+  See /format-profile.yaml for every field; this file intentionally
+  overrides nothing.
+
+# Master Scenes Skill by Daniel Rodrigues

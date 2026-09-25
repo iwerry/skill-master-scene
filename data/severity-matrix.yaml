@@ -1,0 +1,92 @@
+# Master Scenes Skill by Daniel Rodrigues
+#
+# data/severity-matrix.yaml
+# rule_id -> severity -> message template. Consumed by scripts/validate-format.js
+# and scripts/lint-style.js. Severity order: info < style < warning < error.
+
+schema_version: "1.0.0"
+
+rules:
+  FONT-001:
+    severity: error
+    message: "Font '{found}' is not monospaced or is not Courier/Courier Prime. Non-monospaced fonts break the 1-page-per-minute assumption."
+  FONT-002:
+    severity: warning
+    message: "Font is Courier New, not Courier/Courier Prime — Courier New renders ~10% longer and will shift page count."
+  PAGE-001:
+    severity: error
+    message: "Lines per page ({found}) is outside the 45-65 safe range (target 55). This will desync from the 1-page≈1-minute convention."
+  MARGIN-LEFT-001:
+    severity: error
+    message: "Left margin ({found} in) is not 1.5 in. This is the anchor for every column position and 3-hole binding."
+  MARGIN-RIGHT-001:
+    severity: warning
+    message: "Right margin ({found} in) is outside the 0.5–1.25 in tolerance (default 1.0 in)."
+  SH-001:
+    severity: error
+    message: "Scene heading is not in ALL CAPS."
+  SH-002:
+    severity: warning
+    message: "Scene heading is missing a recognized INT./EXT./EST./I/E./INT/EXT. prefix."
+  SH-003:
+    severity: warning
+    message: "Scene heading is missing a time-of-day component after the dash."
+  SH-ORPHAN-001:
+    severity: error
+    message: "Scene heading appears at the bottom of a page with no following action — headings must stay bound to the action that follows."
+  ACT-001:
+    severity: style
+    message: "Action paragraph is longer than 4 lines ({found} lines) — consider breaking it up for readability/pacing."
+  ACT-002:
+    severity: style
+    message: "Action line uses first person or past tense — Master Scene convention is third person, present tense."
+  CHAR-001:
+    severity: error
+    message: "Character name is not in ALL CAPS."
+  CHAR-002:
+    severity: warning
+    message: "Character cue left position ({found} in) is outside the 3.7–4.2 in tolerance."
+  PAREN-001:
+    severity: warning
+    message: "Parenthetical is longer than 1 line."
+  PAREN-002:
+    severity: style
+    message: "Parenthetical appears to describe emotion/acting direction ('wryly') rather than a brief physical action — consider cutting it."
+  DIAL-001:
+    severity: error
+    message: "Dialogue block uses quotation marks, which is non-standard for screenplay dialogue."
+  DIAL-002:
+    severity: warning
+    message: "Single line of dialogue is split across a page break — it should be pushed entirely to the next page."
+  DIAL-MORE-001:
+    severity: info
+    message: "Long dialogue is split across pages without (MORE)/(CONT'D) markers — this is optional but recommended for shooting drafts."
+  TRANS-001:
+    severity: style
+    message: "Transition does not end in 'TO:' — this is a convention, not a requirement."
+  FREEZE-001:
+    severity: warning
+    message: "FREEZE FRAME is followed by a colon or by further action description, which is non-standard."
+  EMPH-001:
+    severity: style
+    message: "Bold/italic emphasis used in a spec-mode script — discouraged (but allowed) outside production documents."
+  RUNTIME-001:
+    severity: warning
+    message: "Page count ({found}) is below the 90-page hard minimum for a feature spec script."
+  RUNTIME-002:
+    severity: warning
+    message: "Page count ({found}) is above the 120-page hard maximum — this reads as shooting-script territory, not spec."
+  RUNTIME-003:
+    severity: style
+    message: "Page count ({found}) is outside the 100–110 page target range for the given script type."
+  STYLE-WESEE-001:
+    severity: style
+    message: "High density of 'WE SEE' / 'WE PAN' constructions ({found} occurrences) — common in shooting scripts, but a style flag in spec mode."
+  STYLE-WRYLY-001:
+    severity: style
+    message: "High density of parentheticals under character cues ({found} occurrences) — often a sign of over-directing actors on the page."
+  SCENE-NUM-001:
+    severity: info
+    message: "Scene numbers present in a 'spec' mode script — scene numbers are conventionally reserved for shooting/production drafts."
+
+# Master Scenes Skill by Daniel Rodrigues

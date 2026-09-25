@@ -1,0 +1,108 @@
+# Master Scenes Skill by Daniel Rodrigues
+#
+# data/terminology.yaml
+# Canonical English terms are the ONLY keys code should ever branch on.
+# Localized labels are metadata for display/glossary purposes only.
+
+schema_version: "1.0.0"
+
+terms:
+  scene_heading:
+    en: "Scene Heading"
+    aliases_en: ["Slugline"]
+    labels: { pt-BR: "Cabeçalho de Cena", es: "Encabezado de Escena", fr: "Intitulé de Scène", ja: "シーンヘディング" }
+  action:
+    en: "Action"
+    labels: { pt-BR: "Ação", es: "Acción", fr: "Action", ja: "アクション" }
+  character:
+    en: "Character"
+    labels: { pt-BR: "Personagem", es: "Personaje", fr: "Personnage", ja: "キャラクター" }
+  dialogue:
+    en: "Dialogue"
+    labels: { pt-BR: "Diálogo", es: "Diálogo", fr: "Dialogue", ja: "セリフ" }
+  parenthetical:
+    en: "Parenthetical"
+    aliases_en: ["Wryly"]
+    labels: { pt-BR: "Parentético", es: "Parentético", fr: "Parenthèse", ja: "パレンセティカル" }
+  transition:
+    en: "Transition"
+    labels: { pt-BR: "Transição", es: "Transición", fr: "Transition", ja: "トランジション" }
+  extension:
+    en: "Extension"
+    labels: { pt-BR: "Extensão", es: "Extensión", fr: "Extension", ja: "拡張表記" }
+  voice_over:
+    en: "V.O. (Voice Over)"
+    labels: { pt-BR: "V.O. (Voz em Off)", es: "V.O. (Voz en Off)", fr: "V.O. (Voix Off)", ja: "V.O.（ボイスオーバー）" }
+  off_screen:
+    en: "O.S. / O.C. (Off Screen / Off Camera)"
+    labels: { pt-BR: "O.S. (Fora de Cena)", es: "O.S. (Fuera de Campo)", fr: "O.S. (Hors Champ)", ja: "O.S.（オフスクリーン）" }
+  continued:
+    en: "CONT'D"
+    labels: { pt-BR: "CONTINUA", es: "CONTINÚA", fr: "SUITE", ja: "CONT'D" }
+  more:
+    en: "MORE"
+    labels: { pt-BR: "MAIS", es: "MÁS", fr: "SUITE", ja: "MORE" }
+  dual_dialogue:
+    en: "Dual Dialogue"
+    labels: { pt-BR: "Diálogo Duplo", es: "Diálogo Dual", fr: "Dialogue Simultané", ja: "デュアルダイアログ" }
+  beat:
+    en: "Beat"
+    labels: { pt-BR: "Beat (pausa)", es: "Beat (pausa)", fr: "Beat (pause)", ja: "ビート" }
+  montage:
+    en: "Montage"
+    labels: { pt-BR: "Montagem", es: "Montaje", fr: "Montage", ja: "モンタージュ" }
+  intercut:
+    en: "Intercut"
+    labels: { pt-BR: "Intercalação", es: "Intercorte", fr: "Alternance", ja: "インターカット" }
+  series_of_shots:
+    en: "Series of Shots"
+    labels: { pt-BR: "Série de Planos", es: "Serie de Planos", fr: "Série de Plans", ja: "ショットの連続" }
+  flashback:
+    en: "Flashback"
+    labels: { pt-BR: "Flashback", es: "Flashback", fr: "Flashback", ja: "フラッシュバック" }
+  cold_open:
+    en: "Cold Open"
+    labels: { pt-BR: "Abertura Fria", es: "Apertura en Frío", fr: "Ouverture à Froid", ja: "コールドオープン" }
+  teaser:
+    en: "Teaser"
+    labels: { pt-BR: "Chamada / Teaser", es: "Teaser", fr: "Teaser", ja: "ティーザー" }
+  act_break:
+    en: "Act Break"
+    labels: { pt-BR: "Quebra de Ato", es: "Corte de Acto", fr: "Fin d'Acte", ja: "アクトブレイク" }
+  title_page:
+    en: "Title Page"
+    labels: { pt-BR: "Página de Título", es: "Página de Título", fr: "Page de Titre", ja: "タイトルページ" }
+  scene_number:
+    en: "Scene Number"
+    labels: { pt-BR: "Número de Cena", es: "Número de Escena", fr: "Numéro de Scène", ja: "シーン番号" }
+  boneyard:
+    en: "Boneyard"
+    labels: { pt-BR: "Boneyard (rascunhos removidos)", es: "Boneyard", fr: "Boneyard", ja: "ボーンヤード" }
+  note:
+    en: "Note"
+    labels: { pt-BR: "Nota", es: "Nota", fr: "Note", ja: "ノート" }
+  sequence:
+    en: "Sequence"
+    labels: { pt-BR: "Sequência", es: "Secuencia", fr: "Séquence", ja: "シークエンス" }
+  card:
+    en: "Card"
+    labels: { pt-BR: "Cartela", es: "Tarjeta", fr: "Carton", ja: "カード" }
+  outline:
+    en: "Outline"
+    labels: { pt-BR: "Esboço", es: "Esquema", fr: "Plan", ja: "アウトライン" }
+  treatment:
+    en: "Treatment"
+    labels: { pt-BR: "Tratamento", es: "Tratamiento", fr: "Traitement", ja: "トリートメント" }
+  one_liner:
+    en: "One-Liner"
+    labels: { pt-BR: "Frase-resumo", es: "Línea Única", fr: "Ligne Unique", ja: "ワンライナー" }
+  step_outline:
+    en: "Step Outline"
+    labels: { pt-BR: "Esboço por Passos", es: "Esquema por Pasos", fr: "Plan par Étapes", ja: "ステップアウトライン" }
+
+note: >
+  Code must always branch on the `en` key, never on a localized label.
+  Localized labels are display metadata only and are NOT translated
+  automatically into new terms — they are the fixed set shown above.
+
+# Master Scenes Skill by Daniel Rodrigues

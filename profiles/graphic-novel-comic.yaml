@@ -1,0 +1,39 @@
+# Master Scenes Skill by Daniel Rodrigues
+#
+# profiles/graphic-novel-comic.yaml
+# Panel-description scripting for comics/graphic novels.
+
+schema_version: "1.0.0"
+profile_id: graphic-novel-comic
+market: "Medium-agnostic (comics/graphic novels)"
+medium: "Comic script / graphic novel script"
+verified: false
+inherits_from: format-profile.yaml
+
+overrides:
+  structure:
+    unit: "Page > Panel"
+    panel_description:
+      first_class_element: true
+      content_rule: "Describes a single static image, not a moving scene — present tense, but no camera movement language."
+      verified: false
+      note: "TODO-VERIFY: exact panel-numbering and panel-count-per-page conventions vary significantly by publisher house style (e.g. full-script vs. Marvel-style plot-first scripting), and no single numeric standard is confirmed here."
+    caption_and_balloon:
+      first_class_elements: true
+      note: "Captions (narration) and dialogue balloons replace the screenplay Action/Dialogue split, but serve an analogous structural role."
+  elements:
+    scene_heading:
+      applies: false
+      replacement: "Page/Panel header"
+  page:
+    verified: false
+    note: "TODO-VERIFY: comic scripts are not typically formatted with the same font/margin conventions as screenplays; no equivalent Courier/12pt/margin standard is confirmed to exist industry-wide for comics."
+
+notes: >
+  This profile documents the structural analogy (Page/Panel replacing
+  Scene/Action, Caption/Balloon replacing Action/Dialogue) as a
+  well-known real-world pattern; it does not assert a numeric
+  page-geometry standard because comics scripting famously varies by
+  writer and publisher (full-script vs. plot-first "Marvel style").
+
+# Master Scenes Skill by Daniel Rodrigues

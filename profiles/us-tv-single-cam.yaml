@@ -1,0 +1,46 @@
+# Master Scenes Skill by Daniel Rodrigues
+#
+# profiles/us-tv-single-cam.yaml
+# US one-hour single-camera drama. Page geometry is inherited unchanged
+# from format-profile.yaml; the deltas are structural (act breaks, runtime).
+
+schema_version: "1.0.0"
+profile_id: us-tv-single-cam
+market: "United States"
+medium: "One-hour single-camera television drama"
+verified: false
+inherits_from: format-profile.yaml
+
+overrides:
+  runtime:
+    script_types:
+      episode:
+        min_pages: 45
+        max_pages: 65
+        target_min: 50
+        target_max: 60
+        verified: false
+        note: "TODO-VERIFY: exact per-network/per-studio target page counts vary; 1 page ≈ 1 minute holds, but hour-long-with-commercials episodes run roughly 42-48 min of actual content plus act breaks, which nets to a wide real-world range."
+  structure:
+    act_breaks:
+      enabled: true
+      typical_count: { min: 4, max: 6, verified: false }
+      slug_convention: "END OF ACT [N]"
+      verified: false
+      note: "TODO-VERIFY: exact act count and slug wording vary by network/streamer; streaming dramas increasingly drop hard act breaks entirely."
+    teaser:
+      enabled: true
+      verified: false
+      note: "TODO-VERIFY: not universal — some streaming one-hour dramas cold-open directly into Act One with no separately labeled teaser."
+    story_tags:
+      enabled: true
+      values: ["A", "B", "C"]
+      verified: false
+
+notes: >
+  Page geometry (font, margins, element columns) is inherited unchanged
+  from the US studio feature profile and is NOT re-verified here
+  independently — treat it as verified only insofar as the parent profile
+  is verified.
+
+# Master Scenes Skill by Daniel Rodrigues
